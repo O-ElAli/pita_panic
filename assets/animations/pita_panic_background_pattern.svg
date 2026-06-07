@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="276" viewBox="0 0 480 276">
+  <style>
+    .txt {
+      font-family: 'FolkiesVantageSans', sans-serif;
+      font-size: 50px;
+      fill: #252524;
+      font-weight: 900;
+    }
+  </style>
+  <!-- Only 4 words total for a cleaner, spaced-out pattern -->
+  <text x="50" y="80" class="txt">PITA</text>
+  <text x="250" y="80" class="txt">PANIC</text>
+  
+  <text x="150" y="200" class="txt">PANIC</text>
+  <text x="350" y="200" class="txt">PITA</text>
+</svg>
