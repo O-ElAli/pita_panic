@@ -123,10 +123,10 @@
 
         /* Dynamic Cravings Shake Engine */
         :root {
-            --panic-angle: 1deg;
-            --panic-translate-x: 1.5px;
-            --panic-translate-y: 1px;
-            --panic-saturation: 1.25;
+            --panic-angle: 0deg;
+            --panic-translate-x: 0px;
+            --panic-translate-y: 0px;
+            --panic-saturation: 1;
         }
 
         @keyframes dynamic-shake {
@@ -210,13 +210,13 @@
                         </p>
                     </div>
                     <div class="flex-grow flex items-center gap-2 max-w-[180px] sm:max-w-[220px]">
-                        <input id="panic-controller" type="range" min="0" max="100" value="10" oninput="updatePanicLevel(this.value)"
+                        <input id="panic-controller" type="range" min="0" max="100" value="0" oninput="updatePanicLevel(this.value)"
                                class="w-full h-2 bg-blackChar rounded-lg appearance-none cursor-pointer accent-panicOrange border-2 border-blackChar">
                     </div>
                 </div>
                 <!-- Dynamic level of panic text under the slider -->
                 <div class="h-10 flex items-center justify-center">
-                    <span id="panic-level-label" class="text-panicOrange text-lg uppercase tracking-wide transition-all duration-75 block text-center leading-none">ACTIVE PANIC</span>
+                    <span id="panic-level-label" class="text-panicOrange uppercase tracking-wide transition-all duration-75 block text-center leading-none">Totally Chill</span>
                 </div>
             </div>
         </div>
@@ -684,12 +684,6 @@
         </div>
     </div>
 
-    <!-- Basket Floating Action Button -->
-    <button onclick="toggleBasket()" id="basket-toggle-btn" class="fixed bottom-6 right-6 z-50 bg-blackChar text-white w-16 h-16 border-4 border-panicOrange rounded-full retro-shadow-orange hover:scale-110 transition-transform flex items-center justify-center">
-        <i class="fa-solid fa-basket-shopping text-2xl"></i>
-        <span id="basket-badge" class="absolute -top-2 -right-2 bg-panicOrange text-white font-display text-sm w-7 h-7 flex items-center justify-center rounded-full border-2 border-white hidden">0</span>
-    </button>
-
     <script>
         // -- Panic Level Logic (Controls CSS animations) --
         const bodyElement = document.getElementById('app-body');
@@ -899,7 +893,7 @@
         // Init
         window.onload = () => {
             updateBasketUI(); // Ensure empty basket logic is set
-            updatePanicLevel(50); // Initialize controller slider at 50%
+            updatePanicLevel(0); // Initialize controller slider at 50%
         };
 
         // -- Smart Scroll Header Logic --
