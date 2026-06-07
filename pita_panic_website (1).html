@@ -164,6 +164,27 @@
             -webkit-appearance: none; 
             margin: 0; 
         }
+        /* Dark Animated Watermark Background for Menu Section */
+        .dark-animated-pita-bg {
+            background-color: #111110; /* Keeps the deep menu background color */
+            
+            /* FIX 1: Wrapped path in url() */
+            /* FIX 2: Changed file extension from .xml to .svg */
+            background-image: url("./assets/animations/pita_panic_background_pattern.svg");
+            
+            background-size: 200px 138px;
+            animation: menu-diagonal-slide 20s linear infinite;
+        }
+
+        /* 30-Degree Diagonal Loop Keyframes */
+        @keyframes menu-diagonal-slide {
+            0% {
+                background-position: 0px 0px;
+            }
+            100% {
+                background-position: -240px -138px;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased panic-level-2" id="app-body">
@@ -293,7 +314,7 @@
     </div>
 
     <!-- Menu Showcase Section -->
-    <section id="menu" class="py-20 bg-blackChar text-freshPita dark-char-pattern border-y-8 border-blackChar scroll-mt-40">
+<section id="menu" class="py-20 text-freshPita dark-animated-pita-bg border-y-8 border-blackChar scroll-mt-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
                 <span class="bg-mildPanic text-white text-xs font-display px-4 py-1.5 border-2 border-white rounded-full tracking-widest uppercase">Certified Cravings Control</span>
