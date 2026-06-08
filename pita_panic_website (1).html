@@ -165,7 +165,7 @@
             
             /* FIX 1: Wrapped path in url() */
             /* FIX 2: Changed file extension from .xml to .svg */
-            background-image: url("./assets/animations/pita_panic_background_pattern.svg");
+            background-image: url("./assets/Animations/pita_panic_background_pattern.svg");
             
             background-size: 200px 138px;
             animation: menu-diagonal-slide 20s linear infinite;
@@ -481,45 +481,51 @@
     </section>
 
     <!-- Emergency Panic Plate Generator -->
-    <section id="generator" class="py-24 bg-toastedPita pita-pattern-bg border-b-8 border-blackChar scroll-mt-40">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-8">
-            <div class="inline-block bg-blackChar text-white border-2 border-blackChar px-5 py-2 font-display text-lg tracking-wide uppercase rotate-[-2deg] retro-shadow unhinged-element">
-                <i class="fa-solid fa-triangle-exclamation text-panicOrange mr-2"></i> IN A DECISION PANIC?
-            </div>
-            
-            <h2 class="text-5xl sm:text-7xl font-display text-blackChar uppercase tracking-tighter">THE CRAVING ROULETTE</h2>
-            <p class="font-sans font-medium text-blackChar max-w-lg mx-auto text-lg sm:text-xl bg-white p-4 border-2 border-blackChar rotate-[1deg] retro-shadow">
-                Can't make up your mind? Smash the unhinged emergency button and let the universe serve your hunger fix instantly.
-            </p>
+<!-- Emergency Panic Plate Generator with Shawarma Packaging Background -->
+<section id="generator" class="relative py-24 bg-toastedPita border-b-8 border-blackChar scroll-mt-40 overflow-hidden">
+    <!-- Background Image overlay set to exactly 50% opacity -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-50 z-0 pointer-events-none" style="background-image: url('assets/Packaging/Pita_Panic_Packaging_Shawarma.jpg');"></div>
+    <!-- Subtle fallback pattern layer -->
+    <div class="absolute inset-0 bg-freshPita opacity-20 pointer-events-none z-0"></div>
 
-            <div class="relative flex flex-col items-center justify-center mt-6 unhinged-element">
-                <div class="relative z-10 w-44 h-44 bg-zinc-400 rounded-full border-4 border-blackChar flex justify-center items-center shadow-[10px_10px_0px_#111110]">
-                    <button onclick="triggerEmergencyFix()" class="group relative w-36 h-36 bg-gradient-to-b from-red-500 via-red-600 to-red-800 hover:from-red-400 hover:to-red-700 rounded-full border-4 border-blackChar shadow-[0px_10px_0px_#991b1b,0px_12px_20px_rgba(0,0,0,0.4)] active:translate-y-[8px] active:shadow-[0px_2px_0px_#7f1d1d,0px_4px_6px_rgba(0,0,0,0.2)] transition-all flex flex-col justify-center items-center select-none cursor-pointer overflow-hidden">
-                        <div class="absolute top-2 left-6 w-20 h-8 bg-white opacity-35 rounded-full filter blur-[1px] rotate-[-15deg]"></div>
-                        <div class="absolute inset-2 rounded-full border border-white opacity-10 pointer-events-none"></div>
-                        <span class="font-display text-white text-3xl tracking-wide uppercase leading-none drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]">PANIC</span>
-                        <span class="font-script text-toastedPita text-lg leading-none rotate-[-6deg] drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] mt-1">Push!</span>
-                    </button>
-                </div>
-                <div class="absolute w-64 h-64 rounded-full bg-red-600 opacity-20 filter blur-3xl animate-pulse pointer-events-none -z-10"></div>
-            </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-8">
+        <div class="inline-block bg-blackChar text-white border-2 border-blackChar px-5 py-2 font-display text-lg tracking-wide uppercase rotate-[-2deg] retro-shadow unhinged-element">
+            <i class="fa-solid fa-triangle-exclamation text-panicOrange mr-2"></i> IN A DECISION PANIC?
+        </div>
+        
+        <h2 class="text-5xl sm:text-7xl font-display text-blackChar uppercase tracking-tighter">THE CRAVING ROULETTE</h2>
+        <p class="font-sans font-medium text-blackChar max-w-lg mx-auto text-lg sm:text-xl bg-white p-4 border-2 border-blackChar rotate-[1deg] retro-shadow">
+            Can't make up your mind? Smash the unhinged emergency button and let the universe serve your hunger fix instantly.
+        </p>
 
-            <div id="roulette-result" class="hidden max-w-md mx-auto bg-white border-4 border-blackChar p-8 text-left retro-shadow-orange relative transition-all duration-300 transform scale-95 opacity-0 mt-8 rotate-[-2deg]">
-                <div class="absolute -top-4 -right-4 transform rotate-12 bg-panicOrange text-white text-sm font-display px-4 py-1.5 border-2 border-blackChar uppercase">Your True Destiny</div>
-                <div class="space-y-4">
-                    <h3 id="result-title" class="text-3xl font-display text-blackChar uppercase leading-tight">CHICKEN SHAWERMA SANDWICH</h3>
-                    <p id="result-desc" class="text-base font-medium text-blackChar">This choice is seriously stacked and seriously unhinged. Go full garlic paste or go home.</p>
-                    <div class="flex items-center justify-between pt-6 border-t-4 border-blackChar">
-                        <span id="result-price" class="text-3xl font-display text-panicOrange">€11.50</span>
-                        <button onclick="addRouletteToStack()" class="bg-blackChar text-white px-6 py-3 font-display border-2 border-blackChar hover:bg-panicOrange transition-colors flex items-center gap-2">
-                            <span>STACK IT!</span>
-                            <i class="fa-solid fa-plus text-freshPita"></i>
-                        </button>
-                    </div>
+        <div class="relative flex flex-col items-center justify-center mt-6 unhinged-element">
+            <div class="relative z-10 w-44 h-44 bg-zinc-400 rounded-full border-4 border-blackChar flex justify-center items-center shadow-[10px_10px_0px_#111110]">
+                <button onclick="triggerEmergencyFix()" class="group relative w-36 h-36 bg-gradient-to-b from-red-500 via-red-600 to-red-800 hover:from-red-400 hover:to-red-700 rounded-full border-4 border-blackChar shadow-[0px_10px_0px_#991b1b,0px_12px_20px_rgba(0,0,0,0.4)] active:translate-y-[8px] active:shadow-[0px_2px_0px_#7f1d1d,0px_4px_6px_rgba(0,0,0,0.2)] transition-all flex flex-col justify-center items-center select-none cursor-pointer overflow-hidden">
+                    <div class="absolute top-2 left-6 w-20 h-8 bg-white opacity-35 rounded-full filter blur-[1px] rotate-[-15deg]"></div>
+                    <div class="absolute inset-2 rounded-full border border-white opacity-10 pointer-events-none"></div>
+                    <span class="font-display text-white text-3xl tracking-wide uppercase leading-none drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]">PANIC</span>
+                    <span class="font-script text-toastedPita text-lg leading-none rotate-[-6deg] drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] mt-1">Push!</span>
+                </button>
+            </div>
+            <div class="absolute w-64 h-64 rounded-full bg-red-600 opacity-20 filter blur-3xl animate-pulse pointer-events-none -z-10"></div>
+        </div>
+
+        <div id="roulette-result" class="hidden max-w-md mx-auto bg-white border-4 border-blackChar p-8 text-left retro-shadow-orange relative transition-all duration-300 transform scale-95 opacity-0 mt-8 rotate-[-2deg]">
+            <div class="absolute -top-4 -right-4 transform rotate-12 bg-panicOrange text-white text-sm font-display px-4 py-1.5 border-2 border-blackChar uppercase">Your True Destiny</div>
+            <div class="space-y-4">
+                <h3 id="result-title" class="text-3xl font-display text-blackChar uppercase leading-tight">CHICKEN SHAWERMA SANDWICH</h3>
+                <p id="result-desc" class="text-base font-medium text-blackChar">This choice is seriously stacked and seriously unhinged. Go full garlic paste or go home.</p>
+                <div class="flex items-center justify-between pt-6 border-t-4 border-blackChar">
+                    <span id="result-price" class="text-3xl font-display text-panicOrange">€11.50</span>
+                    <a href="#menu" class="bg-blackChar text-white px-6 py-3 font-display border-2 border-blackChar hover:bg-panicOrange transition-colors flex items-center gap-2">
+                        <span>VIEW MENU</span>
+                        <i class="fa-solid fa-arrow-right text-freshPita"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Catering Calculator Section -->
     <section id="catering" class="py-24 bg-freshPita border-b-8 border-blackChar scroll-mt-40">
