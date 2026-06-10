@@ -967,80 +967,80 @@
       else panicLabel.innerText = 'UNHINGED CHAOS 🔥';
     }
 
-    // ─────────────────────────────────────────────
-    // BASKET
-    // ─────────────────────────────────────────────
-    let basket = [];
-    const basketContainer     = document.getElementById('cravings-basket');
-    const basketItemsDiv      = document.getElementById('basket-items-container');
-    const basketTotalSpan     = document.getElementById('basket-total');
-    const basketBadge         = document.getElementById('basket-badge');
-    const emptyMsg            = document.getElementById('empty-basket-msg');
+    // // ─────────────────────────────────────────────
+    // // BASKET
+    // // ─────────────────────────────────────────────
+    // let basket = [];
+    // const basketContainer     = document.getElementById('cravings-basket');
+    // const basketItemsDiv      = document.getElementById('basket-items-container');
+    // const basketTotalSpan     = document.getElementById('basket-total');
+    // const basketBadge         = document.getElementById('basket-badge');
+    // const emptyMsg            = document.getElementById('empty-basket-msg');
 
-    function toggleBasket() {
-      if (basketContainer.classList.contains('hidden')) {
-        basketContainer.classList.remove('hidden');
-        setTimeout(() => {
-          basketContainer.classList.remove('scale-95', 'opacity-0');
-          basketContainer.classList.add('scale-100', 'opacity-100');
-        }, 10);
-      } else {
-        basketContainer.classList.remove('scale-100', 'opacity-100');
-        basketContainer.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => basketContainer.classList.add('hidden'), 300);
-      }
-    }
+    // function toggleBasket() {
+    //   if (basketContainer.classList.contains('hidden')) {
+    //     basketContainer.classList.remove('hidden');
+    //     setTimeout(() => {
+    //       basketContainer.classList.remove('scale-95', 'opacity-0');
+    //       basketContainer.classList.add('scale-100', 'opacity-100');
+    //     }, 10);
+    //   } else {
+    //     basketContainer.classList.remove('scale-100', 'opacity-100');
+    //     basketContainer.classList.add('scale-95', 'opacity-0');
+    //     setTimeout(() => basketContainer.classList.add('hidden'), 300);
+    //   }
+    // }
 
-    function addToStack(name, price) {
-      basket.push({ name, price });
-      updateBasketUI();
-      showToast(`Added ${name} to stack!`);
-      const btn = document.getElementById('basket-toggle-btn');
-      btn.classList.add('scale-125');
-      setTimeout(() => btn.classList.remove('scale-125'), 200);
-    }
+    // function addToStack(name, price) {
+    //   basket.push({ name, price });
+    //   updateBasketUI();
+    //   showToast(`Added ${name} to stack!`);
+    //   const btn = document.getElementById('basket-toggle-btn');
+    //   btn.classList.add('scale-125');
+    //   setTimeout(() => btn.classList.remove('scale-125'), 200);
+    // }
 
-    function clearBasket() {
-      basket = [];
-      updateBasketUI();
-    }
+    // function clearBasket() {
+    //   basket = [];
+    //   updateBasketUI();
+    // }
 
-    function updateBasketUI() {
-      basketItemsDiv.innerHTML = '';
-      let total = 0;
-      if (basket.length === 0) {
-        basketItemsDiv.appendChild(emptyMsg);
-        emptyMsg.style.display = 'block';
-        basketBadge.classList.add('hidden');
-      } else {
-        emptyMsg.style.display = 'none';
-        basketBadge.classList.remove('hidden');
-        basketBadge.innerText = basket.length;
-        basket.forEach(item => {
-          total += item.price;
-          const el = document.createElement('div');
-          el.className = 'flex justify-between items-center border-b-2 border-gray-100 pb-2 mb-2 last:border-0 last:mb-0 last:pb-0';
-          el.innerHTML = `
-            <span class="font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
-            <span class="font-sans font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
-          `;
-          basketItemsDiv.appendChild(el);
-        });
-      }
-      basketTotalSpan.innerText = `€${total.toFixed(2)}`;
-    }
+    // function updateBasketUI() {
+    //   basketItemsDiv.innerHTML = '';
+    //   let total = 0;
+    //   if (basket.length === 0) {
+    //     basketItemsDiv.appendChild(emptyMsg);
+    //     emptyMsg.style.display = 'block';
+    //     basketBadge.classList.add('hidden');
+    //   } else {
+    //     emptyMsg.style.display = 'none';
+    //     basketBadge.classList.remove('hidden');
+    //     basketBadge.innerText = basket.length;
+    //     basket.forEach(item => {
+    //       total += item.price;
+    //       const el = document.createElement('div');
+    //       el.className = 'flex justify-between items-center border-b-2 border-gray-100 pb-2 mb-2 last:border-0 last:mb-0 last:pb-0';
+    //       el.innerHTML = `
+    //         <span class="font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
+    //         <span class="font-sans font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
+    //       `;
+    //       basketItemsDiv.appendChild(el);
+    //     });
+    //   }
+    //   basketTotalSpan.innerText = `€${total.toFixed(2)}`;
+    // }
 
-    function showToast(msg) {
-      const toast = document.createElement('div');
-      toast.className = "fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-blackChar text-white px-6 py-3 border-4 border-panicOrange shadow-xl font-display uppercase tracking-wider flex items-center gap-3 transition-all duration-300 translate-y-[-20px] opacity-0 retro-shadow";
-      toast.innerHTML = `<i class="fa-solid fa-fire text-panicOrange animate-pulse"></i> <span class="font-display">${msg}</span>`;
-      document.body.appendChild(toast);
-      setTimeout(() => toast.classList.remove('translate-y-[-20px]', 'opacity-0'), 10);
-      setTimeout(() => {
-        toast.classList.add('translate-y-[-20px]', 'opacity-0');
-        setTimeout(() => toast.remove(), 300);
-      }, 2500);
-    }
+    // function showToast(msg) {
+    //   const toast = document.createElement('div');
+    //   toast.className = "fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-blackChar text-white px-6 py-3 border-4 border-panicOrange shadow-xl font-display uppercase tracking-wider flex items-center gap-3 transition-all duration-300 translate-y-[-20px] opacity-0 retro-shadow";
+    //   toast.innerHTML = `<i class="fa-solid fa-fire text-panicOrange animate-pulse"></i> <span class="font-display">${msg}</span>`;
+    //   document.body.appendChild(toast);
+    //   setTimeout(() => toast.classList.remove('translate-y-[-20px]', 'opacity-0'), 10);
+    //   setTimeout(() => {
+    //     toast.classList.add('translate-y-[-20px]', 'opacity-0');
+    //     setTimeout(() => toast.remove(), 300);
+    //   }, 2500);
+    // }
 
     // ─────────────────────────────────────────────
     // ROULETTE — uses full menuItems list
