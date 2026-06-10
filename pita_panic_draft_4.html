@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PITA PANIC | Cravings Under Pressure</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Satisfy&display=swap" rel="stylesheet">
-    
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -63,21 +59,62 @@
     <style>
         /* Mapped directly to the exact file structures from your VS Code workspace setup */
         @font-face {
-            font-family: 'FolkiesVantageSans';
-            src: url('./assets/Font Files/FolkiesVantageSans/OpenType-TT/Folkies Vantage Sans.ttf') format('truetype'),
-                 url('./assets/Font Files/FolkiesVantageSans/OpenType-PS/Folkies Vantage Sans.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
+    font-family: 'FolkiesVantageSans';
+    src: url('./assets/Font Files/FolkiesVantageSans/Web-PS/Folkies Vantage Sans.woff2') format('woff2'),
+         url('./assets/Font Files/FolkiesVantageSans/OpenType-TT/Folkies Vantage Sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-        @font-face {
-            font-family: 'FolkiesVantageScript';
-            src: url('./assets/Font Files/FolkiesVantageScript/Web-PS/Folkies Vantage Script.woff2') format('woff2'),
-                 url('./assets/Font Files/FolkiesVantageScript/OpenType-TT/Folkies Vantage Script.ttf') format('truetype'),
-                 url('./assets/Font Files/FolkiesVantageScript/OpenType-PS/Folkies Vantage Script.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
+@font-face {
+    font-family: 'FolkiesVantageScript';
+    src: url('./assets/Font Files/FolkiesVantageScript/Web-PS/Folkies Vantage Script.woff2') format('woff2'),
+         url('./assets/Font Files/FolkiesVantageScript/OpenType-TT/Folkies Vantage Script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/Font Files/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/Font Files/Poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/Font Files/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/Font Files/Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/Font Files/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
 
         body {
             background-color: #EFEAE4;
@@ -219,9 +256,9 @@
                 <div class="flex items-center justify-center gap-3 w-full">
                     <div class="flex items-center gap-1.5 shrink-0">
                         <span class="bg-blackChar text-white p-1 rounded-full text-[10px] sm:text-xs animate-pulse"><i class="fa-solid fa-bolt"></i></span>
-                        <p class="text-xs sm:text-sm uppercase tracking-wider text-blackChar whitespace-nowrap">
-                            Choose your craving:
-                        </p>
+                        <p class="font-display text-xs sm:text-sm uppercase tracking-wider text-blackChar whitespace-nowrap">
+    Choose your craving:
+</p>
                     </div>
                     <div class="flex-grow flex items-center gap-2 max-w-[180px] sm:max-w-[220px]">
                         <input id="panic-controller" type="range" min="0" max="100" value="0" oninput="updatePanicLevel(this.value)"
@@ -498,29 +535,44 @@
             Can't make up your mind? Smash the unhinged emergency button and let the universe serve your hunger fix instantly.
         </p>
 
-        <div class="relative flex flex-col items-center justify-center mt-6 unhinged-element">
-            <div class="relative z-10 w-44 h-44 bg-zinc-400 rounded-full border-4 border-blackChar flex justify-center items-center shadow-[10px_10px_0px_#111110]">
-                <button onclick="triggerEmergencyFix()" class="group relative w-36 h-36 bg-gradient-to-b from-red-500 via-red-600 to-red-800 hover:from-red-400 hover:to-red-700 rounded-full border-4 border-blackChar shadow-[0px_10px_0px_#991b1b,0px_12px_20px_rgba(0,0,0,0.4)] active:translate-y-[8px] active:shadow-[0px_2px_0px_#7f1d1d,0px_4px_6px_rgba(0,0,0,0.2)] transition-all flex flex-col justify-center items-center select-none cursor-pointer overflow-hidden">
-                    <div class="absolute top-2 left-6 w-20 h-8 bg-white opacity-35 rounded-full filter blur-[1px] rotate-[-15deg]"></div>
-                    <div class="absolute inset-2 rounded-full border border-white opacity-10 pointer-events-none"></div>
-                    <span class="font-display text-white text-3xl tracking-wide uppercase leading-none drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]">PANIC</span>
-                    <span class="font-script text-toastedPita text-lg leading-none rotate-[-6deg] drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] mt-1">Push!</span>
-                </button>
+            <div id="roulette-result" class="hidden max-w-md mx-auto bg-white border-4 border-blackChar p-8 text-left retro-shadow-orange relative transition-all duration-300 transform scale-95 opacity-0 mt-8 rotate-[-2deg]">
+                <div class="absolute -top-4 -right-4 transform rotate-12 bg-panicOrange text-white text-sm font-display px-4 py-1.5 border-2 border-blackChar uppercase">Your True Destiny</div>
+                <div class="space-y-4">
+                    <h3 id="result-title" class="text-3xl font-display text-blackChar uppercase leading-tight">CHICKEN SHAWERMA SANDWICH</h3>
+                    <p id="result-desc" class="text-base font-medium text-blackChar">This choice is seriously stacked and seriously unhinged. Go full garlic paste or go home.</p>
+                    <div class="flex items-center justify-center pt-6 border-t-4 border-blackChar">
+                        <span id="result-price" class="text-3xl font-display text-panicOrange">€11.50</span>
+                    </div>
+                </div>
             </div>
-            <div class="absolute w-64 h-64 rounded-full bg-red-600 opacity-20 filter blur-3xl animate-pulse pointer-events-none -z-10"></div>
         </div>
+    </section>
 
-        <div id="roulette-result" class="hidden max-w-md mx-auto bg-white border-4 border-blackChar p-8 text-left retro-shadow-orange relative transition-all duration-300 transform scale-95 opacity-0 mt-8 rotate-[-2deg]">
-            <div class="absolute -top-4 -right-4 transform rotate-12 bg-panicOrange text-white text-sm font-display px-4 py-1.5 border-2 border-blackChar uppercase">Your True Destiny</div>
-            <div class="space-y-4">
-                <h3 id="result-title" class="text-3xl font-display text-blackChar uppercase leading-tight">CHICKEN SHAWERMA SANDWICH</h3>
-                <p id="result-desc" class="text-base font-medium text-blackChar">This choice is seriously stacked and seriously unhinged. Go full garlic paste or go home.</p>
-                <div class="flex items-center justify-between pt-6 border-t-4 border-blackChar">
-                    <span id="result-price" class="text-3xl font-display text-panicOrange">€11.50</span>
-                    <a href="#menu" class="bg-blackChar text-white px-6 py-3 font-display border-2 border-blackChar hover:bg-panicOrange transition-colors flex items-center gap-2">
-                        <span>VIEW MENU</span>
-                        <i class="fa-solid fa-arrow-right text-freshPita"></i>
-                    </a>
+    <!-- Franchise & Contact Section -->
+    <section id="franchise" class="py-24 bg-blackChar dark-animated-pita-bg border-b-8 border-blackChar scroll-mt-40">
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div class="bg-panicOrange border-4 border-white p-8 sm:p-12 shadow-[8px_8px_0px_0px_#EFEAE4] transform rotate-[1deg] relative">
+                <div class="absolute -top-5 right-4 sm:right-10 bg-white text-blackChar px-4 py-2 border-4 border-blackChar font-display text-sm uppercase rotate-[-3deg]">
+                    <i class="fa-solid fa-bullhorn text-panicOrange mr-2"></i> Global Domination
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 mt-4">
+                    <div class="md:w-2/3 text-center md:text-left space-y-4">
+                        <h2 class="text-5xl sm:text-6xl font-display text-white uppercase tracking-tighter leading-[1.1] unhinged-element">
+                            WANT TO SPREAD <br>
+                            <span class="text-blackChar bg-white px-2 mt-1 inline-block rotate-[-1deg]">THE PANIC?</span>
+                        </h2>
+                        <p class="font-sans font-medium text-white text-lg sm:text-xl max-w-lg mt-4">
+                            Wanna join the Pita Panic family? If your city is ready for unapologetic flavors, severe garlic, and high-speed chaos, let's talk.
+                        </p>
+                    </div>
+
+                    <div class="md:w-1/3 flex justify-center w-full mt-4 md:mt-0">
+                        <a href="mailto:franchise@pitapanic.be" class="w-full sm:w-auto bg-blackChar text-white font-display text-2xl px-8 py-5 border-4 border-white hover:bg-white hover:text-blackChar hover:border-blackChar transition-all shadow-[6px_6px_0px_0px_#111110] hover:shadow-[8px_8px_0px_0px_#DC3E18] active:translate-y-1 text-center rotate-[-2deg] hover:rotate-0 flex flex-col items-center">
+                            <span>JOIN THE FAMILY</span>
+                            <span class="text-xs font-sans tracking-widest opacity-90 mt-1 uppercase">Start the Inquiry</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -528,7 +580,7 @@
 </section>
 
     <!-- Catering Calculator Section -->
-    <section id="catering" class="py-24 bg-freshPita border-b-8 border-blackChar scroll-mt-40">
+    <section id="catering" class="py-24 bg-freshPita border-b-8 border-blackChar scroll-mt-40 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/BackGrounds/packaging.png');">
         <div class="max-w-5xl mx-auto px-4">
             <div class="bg-white border-4 border-blackChar p-8 sm:p-12 retro-shadow relative">
                 <div class="absolute -top-6 left-8 bg-panicOrange text-white px-6 py-2 border-4 border-blackChar font-display text-xl uppercase rotate-[-3deg]">
@@ -538,14 +590,14 @@
                 <div class="text-center sm:text-left space-y-4 mb-10 mt-4 border-b-4 border-blackChar pb-8 flex flex-col sm:flex-row justify-between items-center gap-6">
                     <div>
                         <h3 class="text-4xl sm:text-5xl font-display text-blackChar uppercase leading-tight">PLANNING A SHAWERMA STORM?</h3>
-                        <p class="text-lg font-medium text-blackChar mt-2">Use this tool to calculate food proportions for your workplace crisis or private party.</p>
+                        <p class="font-sans text-lg font-medium text-blackChar mt-2">Use this tool to calculate food proportions for your workplace crisis or private party.</p>
                     </div>
                     <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blackChar flex-shrink-0 retro-shadow">
                         <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=400&auto=format&fit=crop" alt="Sara Benali - Catering" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <div class="bg-toastedPita border-4 border-blackChar p-6 sm:p-8 space-y-8 unhinged-element text-center">
+                <div class="bg-toastedPita border-4 border-blackChar p-6 sm:p-8 space-y-8 text-center" style="animation: dynamic-shake 0.25s infinite; filter: saturate(var(--panic-saturation));">
                     <h4 class="font-display text-3xl text-blackChar uppercase">
                         How many hungry mouths? <span id="crowd-count" class="text-panicOrange text-4xl sm:text-5xl ml-2 block sm:inline mt-2 sm:mt-0 bg-white border-2 border-blackChar px-4 py-1 rotate-[2deg] inline-block">10 PEOPLE</span>
                     </h4>
@@ -688,15 +740,15 @@
         cat: 'sandwich', bg: 'panicOrange', inner: 'freshPita',
         name: 'Chicken Shawerma Sandwich', price: 11.50, priceDisplay: '€11.50',
         badge: 'TOUM INTENSE', badgeRotate: '12deg',
-        img: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc78a?q=80&w=600&auto=format&fit=crop',
-        imgAlt: 'Chicken Shawerma Sandwich',
-        desc: 'Flame-roasted chicken breast marinated in secret cumin & garlic spices, bundled with unhinged amounts of garlic toum.',
+	img: 'assets/Menu/Food/Sandwiches/shawerma.png',        
+	imgAlt: 'Chicken Shawerma Sandwich',
+        desc: 'Flame-roasted chicken breast marinated in secret cumin & garlic spices, 	bundled with unhinged amounts of garlic toum.',
       },
       {
         cat: 'sandwich', bg: 'mildPanic', inner: 'white',
         name: 'Beef Shawerma Sandwich', price: 12.50, priceDisplay: '€12.50',
         badge: 'TAHINI RAIN', badgeRotate: '-8deg',
-        img: 'https://images.unsplash.com/photo-1626700051175-6518c4793f4f?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Sandwiches/Beef_shawerma.JPEG',
         imgAlt: 'Beef Shawerma Sandwich',
         desc: 'Tender prime beef strips tossed in proprietary Arabic spices, sumac-crusted onions, drenched in hot tahini sauce.',
       },
@@ -704,7 +756,7 @@
         cat: 'sandwich', bg: 'panicOrange', inner: 'freshPita',
         name: 'Falafel Sandwich', price: 8.50, priceDisplay: '€8.50',
         badge: 'SERIOUS CRISP', badgeRotate: '8deg',
-        img: 'https://images.unsplash.com/photo-1593001874117-1f9db3b46e8e?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Sandwiches/falafel.png',
         imgAlt: 'Falafel Sandwich',
         desc: 'Crispy herb-infused chickpea patties with coriander and cumin, cold dipping tahini on the side.',
       },
@@ -712,7 +764,7 @@
         cat: 'meal', bg: 'mildPanic', inner: 'white',
         name: 'Shawerma Arabi Meal Box', price: null, priceDisplay: 'Ask us',
         badge: 'FULL PLATE', badgeRotate: '-5deg',
-        img: 'https://images.unsplash.com/photo-1626700051175-6518c4793f4f?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Meal_Box/arabi_meal.png',
         imgAlt: 'Shawerma Arabi Meal Box',
         desc: 'Full Shawerma Arabi plate — fresh salad, house dip, pickles & golden fries. The whole storm in one box.',
       },
@@ -720,7 +772,7 @@
         cat: 'bowl', bg: 'panicOrange', inner: 'freshPita',
         name: 'Vegan Bowl', price: 12.00, priceDisplay: '€12.00',
         badge: 'PLANT POWER', badgeRotate: '10deg',
-        img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Bowls/Vegan.jpeg',
         imgAlt: 'Vegan Bowl',
         desc: 'Plant-powered bowl with seasoned grains, roasted vegetables, and creamy hummus. No panic, all flavor.',
       },
@@ -728,7 +780,7 @@
         cat: 'bowl', bg: 'mildPanic', inner: 'white',
         name: 'Shawerma Bowl', price: 14.00, priceDisplay: '€14.00',
         badge: 'HIGH PROTEIN', badgeRotate: '-5deg',
-        img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop',
+	img: 'assets/Menu/Food/Bowls/Shawerma_Bowl.png', 
         imgAlt: 'Shawerma Bowl',
         desc: 'Roasted chicken on turmeric rice, crunchy pickles, cherry tomatoes & heavy garlic paste.',
       },
@@ -736,7 +788,7 @@
         cat: 'bowl', bg: 'panicOrange', inner: 'freshPita',
         name: 'Fried Chicken Bowl', price: 13.50, priceDisplay: '€13.50',
         badge: 'CRUNCH LOADED', badgeRotate: '8deg',
-        img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Bowls/Fried_Chicken.jpeg',
         imgAlt: 'Fried Chicken Bowl',
         desc: 'Crunchy fried chicken strips over spiced rice with garlic sauce and fresh toppings.',
       },
@@ -744,7 +796,7 @@
         cat: 'bowl', bg: 'mildPanic', inner: 'white',
         name: 'Fattet Hummus', price: 11.00, priceDisplay: '€11.00',
         badge: 'LEVANT CLASSIC', badgeRotate: '-10deg',
-        img: 'https://images.unsplash.com/photo-1547058881-aa0edd92aab3?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Bowls/Fattet_Hummus.jpeg',
         imgAlt: 'Fattet Hummus',
         desc: 'Crispy toasted pita, creamy hummus, warm chickpeas, tahini sauce & toasted pine nuts.',
       },
@@ -752,7 +804,7 @@
         cat: 'bowl', bg: 'panicOrange', inner: 'freshPita',
         name: 'Fattet Jaj', price: 13.00, priceDisplay: '€13.00',
         badge: 'SLOW COOKED', badgeRotate: '6deg',
-        img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Bowls/Fattet_jaj.jpeg',
         imgAlt: 'Fattet Jaj',
         desc: 'Slow-cooked chicken fatteh layered with toasted pita, yogurt, tahini & almonds.',
       },
@@ -760,7 +812,7 @@
         cat: 'hummus', bg: 'mildPanic', inner: 'white',
         name: 'Single Hummus Tub (250g)', price: 5.50, priceDisplay: '€5.50',
         badge: 'OG CLASSIC', badgeRotate: '-8deg',
-        img: 'https://images.unsplash.com/photo-1547058881-aa0edd92aab3?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Hummus/original_hummus.png',
         imgAlt: 'Single Hummus Tub',
         desc: 'Our signature creamy original hummus — 250g, cold and ready to devour or take home.',
       },
@@ -768,7 +820,7 @@
         cat: 'hummus', bg: 'panicOrange', inner: 'freshPita',
         name: 'Hummus Trio Tray', price: 9.00, priceDisplay: '€9.00',
         badge: 'DIP HEAVEN', badgeRotate: '10deg',
-        img: 'https://images.unsplash.com/photo-1547058881-aa0edd92aab3?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Hummus/trio_hummus.jpeg',
         imgAlt: 'Hummus Trio Tray',
         desc: 'Three bold hummus flavors — Beetroot, Basil & Spicy — served with toasted pita breads.',
       },
@@ -776,7 +828,7 @@
         cat: 'dips', bg: 'mildPanic', inner: 'white',
         name: 'Dip Selection', price: 2.00, priceDisplay: '€2.00',
         badge: 'SAUCE BOSS', badgeRotate: '-6deg',
-        img: 'https://images.unsplash.com/photo-1547058881-aa0edd92aab3?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Dips/dips.jpeg',
         imgAlt: 'Dip Selection',
         desc: 'In-house garlic sauce, chili sauce, or tahini. Each one made with zero apology.',
       },
@@ -793,7 +845,7 @@
         cat: 'chicken', bg: 'mildPanic', inner: 'white',
         name: 'Chicken Burger Box', price: 11.00, priceDisplay: '€11.00',
         badge: 'FULLY LOADED', badgeRotate: '-8deg',
-        img: 'https://images.unsplash.com/photo-1593001874117-1f9db3b46e8e?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Chicken/chicken_burger.png',
         imgAlt: 'Chicken Burger Box',
         desc: 'A fully loaded fried chicken burger with house sauce, fresh toppings, and extreme attitude.',
       },
@@ -801,7 +853,7 @@
         cat: 'sides', bg: 'panicOrange', inner: 'freshPita',
         name: 'Fries', price: 4.00, priceDisplay: '€4.00',
         badge: 'LOADED FIX', badgeRotate: '-12deg',
-        img: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Sides/fries.jpeg',
         imgAlt: 'Fries',
         desc: 'Sumac-seasoned golden fries available as a crispy side or loaded inside your combo.',
       },
@@ -809,7 +861,7 @@
         cat: 'drinks', bg: 'mildPanic', inner: 'white',
         name: 'Fresh Juices', price: null, priceDisplay: 'Seasonal',
         badge: 'COLD & FRESH', badgeRotate: '8deg',
-        img: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Juice/juice.jpeg',
         imgAlt: 'Fresh Juices',
         desc: 'Cold-pressed seasonal fruit juices. Tame the heat after all that garlic.',
       },
@@ -817,7 +869,7 @@
         cat: 'drinks', bg: 'panicOrange', inner: 'freshPita',
         name: 'Dessert', price: null, priceDisplay: 'Ask us',
         badge: 'SWEET ENDING', badgeRotate: '-6deg',
-        img: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop',
+        img: 'assets/Menu/Food/Dessert/dessert.jpeg',
         imgAlt: 'Dessert',
         desc: 'Sweet endings — ask us what\'s in the case today. Worth the wait.',
       },
@@ -958,7 +1010,7 @@
           el.className = 'flex justify-between items-center border-b-2 border-gray-100 pb-2 mb-2 last:border-0 last:mb-0 last:pb-0';
           el.innerHTML = `
             <span class="font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
-            <span class="font-display text-panicOrange">€${item.price.toFixed(2)}</span>
+            <span class="font-sans font-bold text-sm uppercase text-blackChar w-2/3 truncate">${item.name}</span>
           `;
           basketItemsDiv.appendChild(el);
         });
@@ -969,7 +1021,7 @@
     function showToast(msg) {
       const toast = document.createElement('div');
       toast.className = "fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-blackChar text-white px-6 py-3 border-4 border-panicOrange shadow-xl font-display uppercase tracking-wider flex items-center gap-3 transition-all duration-300 translate-y-[-20px] opacity-0 retro-shadow";
-      toast.innerHTML = `<i class="fa-solid fa-fire text-panicOrange animate-pulse"></i> <span>${msg}</span>`;
+      toast.innerHTML = `<i class="fa-solid fa-fire text-panicOrange animate-pulse"></i> <span class="font-display">${msg}</span>`;
       document.body.appendChild(toast);
       setTimeout(() => toast.classList.remove('translate-y-[-20px]', 'opacity-0'), 10);
       setTimeout(() => {
