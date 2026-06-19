@@ -245,7 +245,7 @@
         <!-- Panic Controller Bar -->
         <div class="bg-toastedPita border-b-4 border-blackChar py-2 px-4 relative z-10">
             <div class="max-w-md mx-auto flex flex-col items-center justify-center gap-1 text-center font-display">
-                <!-- Choose your craving label + Slider right after it -->
+                <!-- Choose your craving label + Slider -->
                 <div class="flex items-center justify-center gap-3 w-full">
                     <div class="flex items-center gap-1.5 shrink-0">
                         <span class="bg-blackChar text-white p-1 rounded-full text-[10px] sm:text-xs animate-pulse"><i class="fa-solid fa-bolt"></i></span>
@@ -254,7 +254,7 @@
 </p>
                     </div>
                     <div class="flex-grow flex items-center gap-2 max-w-[180px] sm:max-w-[220px]">
-                        <input id="panic-controller" type="range" min="0" max="100" value="0" oninput="updatePanicLevel(this.value)"
+                        <input id="panic-controller" type="range" min="0" max="100" value="5" oninput="updatePanicLevel(this.value)"
                                class="w-full h-2 bg-blackChar rounded-lg appearance-none cursor-pointer accent-panicOrange border-2 border-blackChar">
                     </div>
                 </div>
@@ -305,7 +305,7 @@
                 <div class="relative w-full max-w-md aspect-[4/5]">
                     <div class="absolute inset-0 bg-toastedPita border-4 border-blackChar transform rotate-6 shadow-[8px_8px_0px_0px_#DC3E18]"></div>
                     <div class="absolute inset-0 overflow-hidden border-4 border-blackChar bg-white">
-                        <img src="assets/Landing Page/PITA PANIC Social templates-59.png" alt="Pita Panic Shawerma Wrap" class="w-full h-full object-cover contrast-125 saturate-110" />
+                        <img src="assets/Landing Page/landing_image.JPEG" alt="Pita Panic Shawerma Wrap" class="w-full h-full object-cover contrast-125 saturate-110" />
                     </div>
                     <div class="absolute -top-6 -left-6 bg-freshPita border-4 border-blackChar px-4 py-2 font-display text-xl rotate-[-12deg] shadow-lg animate-float text-blackChar">
                         🌯 WORTH THE PANIC!
@@ -900,9 +900,14 @@
 
           div.innerHTML = `
             <div class="${innerClasses[item.inner]} rounded-[20px] border-4 border-dashed border-blackChar/20 h-full p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-              <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
-               <img src="${item.img}" alt="${item.imgAlt}"
-     class="w-full h-full object-cover rounded-full border-4 border-blackChar shadow-[6px_6px_0px_0px_#111110] bg-white"
+
+             <div class="w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 relative">
+  <div class="w-full h-full rounded-full bg-blackChar p-2 shadow-[6px_10px_0px_0px_#111110] rotate-[-3deg]">
+    <img src="${item.img}" alt="${item.imgAlt}"
+         class="w-full h-full object-cover rounded-full bg-white"
+         style="object-position: ${item.objPos || '50% center'}" />
+  </div>
+
      style="object-position: ${item.objPos || '50% center'}" />
                 <span class="absolute top-0 -right-2 bg-blackChar text-white text-sm font-display px-3 py-1 border-2 border-white z-10"
                       style="transform: rotate(${item.badgeRotate})">${item.badge}</span>
@@ -1101,8 +1106,7 @@
     // ─────────────────────────────────────────────
     window.onload = () => {
       buildMenuGrid('all');
-      updateBasketUI();
-      updatePanicLevel(50);
+      updatePanicLevel(5);
     };
     </script>
 </body>
