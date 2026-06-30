@@ -231,7 +231,7 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-10 font-bold uppercase tracking-wider">
-                    <a href="#menu" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Menu</a>
+                    <a href="Menu.html" target="_blank" rel="noopener" class="hover:text-panicOrange transition-colors 		    py-2 font-display text-xl">Menu</a>
                     <a href="#generator" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Roulette</a>
                     <a href="#catering" class="hover:text-panicOrange transition-colors py-2 font-display text-xl">Catering</a>
                     
@@ -1080,24 +1080,50 @@
     }
 
     // ─────────────────────────────────────────────
-    // SMART SCROLL HEADER
+    // SMART SCROLL HEADER (Fixed Jitter & 70px Threshold)
     // ─────────────────────────────────────────────
     let lastScrollY = window.scrollY;
+    let accumulatedUp = 0;   // Tracks continuous upward scroll
+    let accumulatedDown = 0; // Tracks continuous downward scroll
     const headerWrapper = document.getElementById('header-wrapper');
+
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > 120) {
-        if (currentScrollY > lastScrollY + 5) {
+      const diff = currentScrollY - lastScrollY;
+
+      // 1. Force show navbar when near the very top of the page
+      if (currentScrollY <= 120) {
+        headerWrapper.classList.remove('-translate-y-full');
+        headerWrapper.classList.add('translate-y-0');
+        accumulatedUp = 0;
+        accumulatedDown = 0;
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (diff > 0) {
+        // 2. User is scrolling DOWN
+        accumulatedDown += diff;
+        accumulatedUp = 0; // Reset upward tracking
+
+        // Only hide if they scroll down by more than 10px
+        if (accumulatedDown > 10) {
           headerWrapper.classList.remove('translate-y-0');
           headerWrapper.classList.add('-translate-y-full');
-        } else if (currentScrollY < lastScrollY - 5) {
+        }
+      } else if (diff < 0) {
+        // 3. User is scrolling UP
+        accumulatedUp += Math.abs(diff);
+        accumulatedDown = 0; // Reset downward tracking
+
+        // Only reveal the navbar once they cross the 70px threshold
+        if (accumulatedUp >= 200) {
           headerWrapper.classList.remove('-translate-y-full');
           headerWrapper.classList.add('translate-y-0');
         }
-      } else {
-        headerWrapper.classList.remove('-translate-y-full');
-        headerWrapper.classList.add('translate-y-0');
       }
+
+      // Always update the baseline position for the next frame
       lastScrollY = currentScrollY;
     });
 
